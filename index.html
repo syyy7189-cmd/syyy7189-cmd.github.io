@@ -76,6 +76,9 @@
   .cover .c-author{font-size:.7em;font-weight:500;position:relative;display:flex;justify-content:space-between;align-items:center}
   .cover .c-mark{width:1.9em;height:1.9em;border-radius:3px;background:var(--seal);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:.62em;font-weight:900}
   .cover .c-deco{position:absolute;right:-18%;bottom:18%;width:75%;aspect-ratio:1;border-radius:50%;background:var(--c-deco,rgba(255,255,255,.12))}
+  .cover-img{padding:0;background:var(--c-bg)}
+  .cover-img img{width:100%;height:100%;object-fit:cover;display:block;position:relative}
+  .cover-img.fit-contain img{object-fit:contain}
   .cover.soon{background:repeating-linear-gradient(135deg,#e8dfcc 0 14px,#e2d7c1 14px 28px);color:var(--muted);border:2px dashed #c9bb9f}
   /* grid */
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 36px}
@@ -253,7 +256,7 @@
 
 <footer>
   <div class="wrap row">
-    <div><b style="font-family:var(--serif);color:var(--ink)">이선영 작가의 서재</b><br>책은 작가와(jakkawa)를 통해 교보문고·예스24·알라딘 등 온라인 서점에서 판매됩니다.<br>이 홈페이지는 책 소개 공간이며, 결제는 각 서점에서 이루어집니다.</div>
+    <div><b style="font-family:var(--serif);color:var(--ink)">이선영 작가의 서재</b><br>책은 작가와를 통해 예스24 등 온라인 서점에서, 일부는 크몽에서 판매됩니다.<br>이 홈페이지는 책 소개 공간이며, 결제는 각 서점에서 이루어집니다.</div>
     <div style="text-align:right">
       <a href="https://blog.naver.com/syy7189">네이버 블로그</a> · <a href="#lecture">강의 문의</a><br>
       © 2026 이선영. All rights reserved.
@@ -279,7 +282,7 @@ const STORES = {
 
 const BOOKS = [
   {
-    id:"flower", cat:"growth", tag:"실화 소설",
+    id:"flower", cat:"growth", tag:"실화 소설", price:"12,000원",
     title:"쓰러진 자리마다 꽃이 핀다",
     subtitle:"시장에서 양말을 팔던 어머니와 가위를 들던 딸의 이야기",
     hook:"1970년부터 2026년까지, 어머니와 딸 두 사람의 시선이 교차하며 써 내려간 삶의 기록.",
@@ -291,32 +294,32 @@ const BOOKS = [
       "넘어지고 또 넘어졌지만, 쓰러진 그 자리마다 결국 꽃이 피었다는 것. 지금 어딘가에서 주저앉아 있는 당신에게 건네는 이야기입니다."
     ],
     forWho:["부모님, 특히 어머니를 떠올리면 마음이 먹먹해지는 분","인생의 고비 앞에서 다시 일어설 힘이 필요한 분","실화를 바탕으로 한 가족 이야기를 좋아하는 분"],
-    toc:["1970, 시장 골목의 어머니","가위를 든 딸","새벽 두 시의 미용실","죽음의 문턱에서","어머니를 보내고, 3년","다시 펜을 든 날"],
-    note:null,
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    toc:null, note:null,
+    links:{kyobo:"",yes24:"",aladin:"",ridi:""}
   },
   {
-    id:"barefoot", cat:"growth", tag:"자기 성장 에세이·워크북",
+    id:"barefoot", cat:"growth", tag:"자기 성장 에세이·워크북", price:"9,900원",
     title:"맨발로 걷는 나에게",
-    subtitle:"나를 다시 쓰는 자기 사용 설명서",
+    subtitle:"다시 시작하는 사람을 위한 자기 사용 설명서",
     hook:"신발을 벗고 땅을 밟던 그날부터 시작된, 나를 다시 알아가는 연습.",
+    img:"https://image.yes24.com/goods/201061463/XL",
     colors:{bg:"linear-gradient(165deg,#3f5d47,#22352a)",deco:"rgba(220,240,200,.12)"},
-    meta:["에세이 + 실천 워크북","약 200쪽","A5 전자책"],
+    meta:["에세이 + 실천 워크북","약 200쪽","전자책"],
     intro:[
       "26년의 미용 인생, 그리고 마흔여섯에 시작한 새로운 공부. 삶의 큰 고비를 지난 뒤 작가는 맨발로 걷기 시작했습니다.",
       "이 책은 세계의 자기계발 고전에서 길어 올린 지혜와 작가 자신의 삶을 엮은 '나 사용 설명서'입니다. 읽고 끝나는 책이 아니라, 장마다 나를 돌아보고 적어 보는 워크북이 함께합니다.",
       "부드럽게, 그러나 포기하지 않고. 오늘 한 걸음을 내딛고 싶은 당신에게."
     ],
     forWho:["인생 2막을 준비하며 나를 다시 정리하고 싶은 분","읽는 것에서 그치지 않고 직접 써 보며 변화하고 싶은 분","맨발 걷기, 느린 습관에 관심 있는 분"],
-    toc:["멈춰 둔 시간을 꺼내다","나라는 사람의 사용법","포기하지 않는 마음의 근육","맨발로 배우는 하루","다시 쓰는 나의 지도"],
-    note:null,
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    toc:null, note:null,
+    links:{yes24:"https://www.yes24.com/product/goods/201061463",kyobo:"",aladin:"",ridi:""}
   },
   {
-    id:"bloom", cat:"growth", tag:"마음 에세이",
+    id:"bloom", cat:"growth", tag:"마음 에세이", price:"9,900원",
     title:"멈춘 마음이 다시 피어나는",
-    subtitle:"흔들리지 않는 마음자리와 결정의 힘",
+    subtitle:"머물던 마음이 다시 걸어가기까지",
     hook:"결정 앞에서 자꾸 멈추는 마음에게, 철학자의 문장과 한 사람의 일기가 건네는 답.",
+    img:"https://image.yes24.com/goods/201268419/XL",
     colors:{bg:"linear-gradient(165deg,#5b4a7a,#2f2545)",deco:"rgba(230,215,255,.12)"},
     meta:["철학 + 일기 형식","약 200쪽","전자책"],
     intro:[
@@ -325,12 +328,11 @@ const BOOKS = [
       "멈춰 있던 마음이 다시 피어나는 순간을, 이 책과 함께 맞이하시길 바랍니다."
     ],
     forWho:["결정을 내릴 때마다 오래 망설이는 분","배움을 다시 시작했거나 이어 가고 있는 성인 학습자","철학의 문장을 일상의 언어로 만나고 싶은 분"],
-    toc:["멈춘 마음을 들여다보다","마음자리를 세우는 세 가지 덕목","철학자에게 묻다","오늘의 일기","다시 피어나는 결정"],
-    note:null,
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    toc:null, note:null,
+    links:{yes24:"https://www.yes24.com/product/goods/201268419",kyobo:"",aladin:"",ridi:""}
   },
   {
-    id:"code", cat:"wisdom", tag:"삶의 지혜서",
+    id:"code", cat:"wisdom", tag:"삶의 지혜서", price:"9,900원",
     title:"내 팔자의 암호를 풀다",
     subtitle:"사주명리·MBTI·지문으로 푸는 타고난 것과 바꾸는 것",
     hook:"점이 아닌 지혜로. 타고난 결을 알면, 바꿀 수 있는 것이 보입니다.",
@@ -338,19 +340,82 @@ const BOOKS = [
     meta:["명리 + 성향 분석","약 200쪽","전자책"],
     intro:[
       "이 책은 길흉을 점치는 책이 아닙니다. 명리를 배운 사람이 삶에서 길어 올린 '사람을 보는 지혜'에 관한 책입니다.",
-      "사주명리를 중심에 두고 수리, MBTI, 지문 같은 도구를 함께 써서, 내가 타고난 것과 내가 바꿔 갈 수 있는 것을 나누어 봅니다. 하늘의 뜻을 안다는 지천명(知天命)의 나이에 이른 작가의 시선이 담겼습니다.",
+      "사주명리를 중심에 두고 수리, MBTI, 지문 같은 도구를 함께 써서, 내가 타고난 것과 내가 바꿔 갈 수 있는 것을 나누어 봅니다.",
       "내 팔자의 암호를 푸는 열쇠는, 결국 나를 이해하는 데 있습니다."
     ],
     forWho:["사주에 관심은 있지만 '운세'보다 '나'를 알고 싶은 분","가족·동료와의 관계를 다른 눈으로 보고 싶은 분","MBTI, 성향 검사를 좋아하는 분"],
-    toc:["팔자라는 암호","타고난 것: 오행과 성향","숫자와 지문이 말하는 나","바꿀 수 있는 것","길흉을 고루 나누는 지혜"],
-    note:"이 책은 점술서가 아닌, 삶의 지혜로서의 명리를 다룹니다.",
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    toc:null, note:"이 책은 점술서가 아닌, 삶의 지혜로서의 명리를 다룹니다.",
+    links:{kyobo:"",yes24:"",aladin:"",ridi:""}
   },
   {
-    id:"lectern", cat:"practice", tag:"예비 강사를 위한 시집형 책",
+    id:"people", cat:"wisdom", tag:"노후 인간관계", price:"12,000원",
+    title:"사람은 변하지 않는다",
+    subtitle:"노후에 나는 누구와 함께할 것인가",
+    hook:"고쳐 쓸 수 없는 사람, 곁에 두어야 할 사람. 나이 들수록 필요한 관계의 지혜.",
+    colors:{bg:"linear-gradient(165deg,#3a3f47,#1c1f24)",deco:"rgba(255,255,255,.10)"},
+    meta:["인간관계 지침서","약 200쪽","전자책"],
+    intro:[
+      "사람은 쉽게 변하지 않습니다. 그렇다면 노후에 나는 누구와 함께해야 할까요?",
+      "세상 작가들의 생각과 사주명리·지문·타로 같은 도구를 엮어, 왜 사람은 고쳐 쓸 수 없는지, 나이 들수록 곁에 둘 사람은 누구인지, 지혜로운 사람은 어떻게 관계를 고르는지를 정리했습니다.",
+      "들고 다니며 한 장씩 꺼내 읽는, 요즘 시대의 인간관계 지침서입니다."
+    ],
+    forWho:["노후의 인간관계를 다시 정리하고 싶은 분","관계 때문에 마음이 지친 분","사람을 보는 눈을 기르고 싶은 분"],
+    toc:null, note:null,
+    links:{kyobo:"",yes24:"",aladin:"",ridi:""}
+  },
+  {
+    id:"color", cat:"growth", tag:"4070 스타일·컬러", price:"13,000원",
+    title:"오래 미뤄 둔 나에게",
+    subtitle:"스물여섯 해 헤어 디자이너가 건네는 4070 퍼스널 컬러와 오행 스타일",
+    hook:"가족을 먼저 챙기느라 미뤄 둔 나에게, 이제는 어울리는 색을 입혀 줄 시간.",
+    colors:{bg:"linear-gradient(165deg,#e8b4a0,#b86f5c)",deco:"rgba(255,255,255,.18)"},
+    meta:["퍼스널 컬러 + 오행","4070 여성","전자책"],
+    intro:[
+      "스물여섯 해 동안 수많은 여성의 머리를 만져 온 헤어 디자이너가, 4070 여성에게 어울리는 색과 스타일을 이야기합니다.",
+      "퍼스널 컬러, 오행의 다섯 가지 색, 헤어와 옷을 고르는 기준까지. 남에게 보여 주는 나를 다시 세우고, 인생의 방향까지 함께 다듬는 스타일 지침서입니다."
+    ],
+    forWho:["거울 앞에서 무엇을 입어야 할지 막막한 4070 여성","퍼스널 컬러와 오행 색에 관심 있는 분","나를 위한 변화를 시작하고 싶은 분"],
+    toc:null, note:null,
+    links:{kyobo:"",yes24:"",aladin:"",ridi:""}
+  },
+  {
+    id:"moon", cat:"wisdom", tag:"고전 에세이", price:"12,000원",
+    title:"달빛에 비친 나",
+    subtitle:"고전 11권으로 나를 찾는 여행",
+    hook:"데미안, 싯다르타, 변신… 고전 속에서 길을 찾아 나를 다시 만나는 여행.",
+    img:"https://static.cdn.kmong.com/gigs/Gbah91793511657.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#f4f1ea,#d9d3c4)",deco:"rgba(30,40,70,.10)",fg:"#1f1b16"},
+    meta:["고전 에세이","독자 기록장 포함","전자책"],
+    intro:[
+      "『데미안』, 『이반 일리치의 죽음』, 『변신』, 『싯다르타』 등 세계 고전 11권을 통해 무너진 자아와 삶의 의미, 관계와 사랑, 흔들리지 않는 마음을 이야기합니다.",
+      "장마다 독자가 직접 적어 보는 '나의 달빛 노트'가 있어, 읽으며 나를 찾아가는 여행이 됩니다."
+    ],
+    forWho:["고전을 삶의 언어로 읽고 싶은 분","나다움을 다시 찾고 싶은 분","관계와 말의 품격을 고민하는 분"],
+    toc:null, note:null,
+    links:{kmong:"https://kmong.com/gig/852474"}
+  },
+  {
+    id:"fifty", cat:"wisdom", tag:"관계 심리", price:"12,000원",
+    title:"50세에 만나야 할 사람",
+    subtitle:"관계를 고르는 지혜",
+    hook:"쉰 살부터는 관계도 고르는 것입니다. 남은 시간을 함께할 사람을 보는 눈.",
+    img:"https://static.cdn.kmong.com/gigs/63drb1793443772.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#2f5d62,#1b3a3d)",deco:"rgba(255,255,255,.12)"},
+    meta:["관계 심리","전자책"],
+    intro:[
+      "인생 후반부의 행복은 누구와 함께하느냐에 크게 달려 있습니다.",
+      "50세 이후에 곁에 두어야 할 사람과 거리를 두어야 할 사람을 구분하는 기준, 그리고 좋은 관계를 지켜 가는 지혜를 담았습니다."
+    ],
+    forWho:["인생 후반부의 관계를 정리하고 싶은 분","사람 때문에 지친 마음을 돌보고 싶은 분"],
+    toc:null, note:null,
+    links:{kmong:"https://kmong.com/gig/841761"}
+  },
+  {
+    id:"lectern", cat:"practice", tag:"예비 강사를 위한 시집형 책", price:"7,900원",
     title:"강단에 서는 당신에게",
     subtitle:"하루 한 단어로 다지는 강사의 마음과 예의",
     hook:"주머니에 넣고 다니는 강사의 시집. 하루 한 단어, 하루 한 줄의 다짐.",
+    img:"https://image.yes24.com/goods/201368625/XL",
     colors:{bg:"linear-gradient(165deg,#c9a25b,#8f6c2f)",deco:"rgba(255,255,255,.16)",fg:"#2a1f0e"},
     meta:["시집형 자기계발","100쪽 이내","전자책"],
     intro:[
@@ -359,58 +424,132 @@ const BOOKS = [
       "매일 한 장씩, 강단에 서는 당신의 마음을 다져 보세요."
     ],
     forWho:["인생 2막으로 강사를 준비하거나 막 시작한 분","강의 전 마음을 가다듬을 짧은 글이 필요한 분","후배 강사에게 선물할 책을 찾는 분"],
-    toc:["첫째 주: 준비하는 마음","둘째 주: 말하는 사람의 예의","셋째 주: 듣는 사람을 보다","넷째 주: 강단을 내려온 뒤"],
-    note:null,
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    toc:null, note:null,
+    links:{yes24:"https://www.yes24.com/product/goods/201368625",kyobo:"",aladin:"",ridi:""}
   },
   {
-    id:"stroke", cat:"practice", tag:"장애 인식 개선",
-    title:"한 획의 마음",
-    subtitle:"요양 현장 선생님을 위한 장애 인식 이야기",
-    hook:"붓의 한 획처럼, 한 사람을 대하는 마음에도 정성이 담깁니다.",
-    colors:{bg:"linear-gradient(165deg,#e9e2d3,#cfc3aa)",deco:"rgba(168,50,42,.12)",fg:"#1f1b16"},
-    meta:["돌봄 실무","전자책"],
+    id:"ai", cat:"practice", tag:"5060 AI 입문", price:"9,900원",
+    title:"AI 모르면 누구한테 물어봐",
+    subtitle:"물어볼 사람 없어도 50대 딱 10번이면 혼자 합니다",
+    hook:"\"누구한테 배워? 선영이한테 와!\" 노트북 첫걸음부터 AI까지, 딱 10번이면 혼자 합니다.",
+    img:"https://image.yes24.com/goods/201382081/XL",
+    colors:{bg:"linear-gradient(165deg,#2b6cb0,#1a3f6b)",deco:"rgba(255,255,255,.14)"},
+    meta:["10회 수업 구성","5060 입문","전자책"],
     intro:[
-      "요양과 돌봄 현장에서 매일 사람을 만나는 선생님들께, 캘리그라피 강사이자 작가인 이선영이 자신의 삶을 바탕으로 건네는 장애 인식 이야기입니다.",
-      "어려운 이론보다 현장에서 바로 떠올릴 수 있는 장면과 말 한마디를 중심으로, 장애를 가진 분을 '돌봄의 대상'이 아닌 '한 사람'으로 만나는 법을 이야기합니다.",
-      "기관 교육 자료로도, 개인의 마음 공부로도 활용하실 수 있습니다."
+      "처음 배울 때 무슨 말인지 하나도 알아듣지 못했고, 돌아서면 다 잊어버렸던 작가가 직접 만든 AI 입문서입니다.",
+      "노트북 사용 첫걸음부터 스마트폰, AI에게 묻고 시키는 법까지 10번의 수업으로 나누었습니다. 물어볼 자식이 없어도, 혼자 살아도 괜찮습니다. 이 책 한 권이면 혼자 책을 쓰고, 물건을 팔고, 세상을 볼 수 있습니다."
     ],
-    forWho:["요양병원·요양원·돌봄 현장의 선생님","기관의 장애인식개선 교육 담당자","돌봄의 마음가짐을 다시 세우고 싶은 분"],
-    toc:["한 획을 긋기 전에","장애를 바라보는 말과 시선","현장에서 마주하는 순간들","한 사람으로 만나기"],
-    note:null,
-    links:{kyobo:"",yes24:"",aladin:"",ridi:"",millie:"",bookcube:""}
+    forWho:["컴퓨터·AI가 처음인 50대 이후","물어볼 사람 없이 혼자 배워야 하는 분","AI로 내 일과 취미를 넓히고 싶은 분"],
+    toc:null, note:null,
+    links:{yes24:"https://www.yes24.com/product/goods/201382081",kyobo:"",aladin:"",ridi:""}
   },
   {
-    id:"table", cat:"health", tag:"건강 시리즈 (전 10권)",
+    id:"aicmd", cat:"practice", tag:"AI 활용", price:"12,000원",
+    title:"AI는 명령 + 실행",
+    subtitle:"나는 나를 알아야 한다",
+    hook:"AI에게 잘 시키려면, 먼저 내가 무엇을 원하는지 알아야 합니다.",
+    img:"https://static.cdn.kmong.com/gigs/uut5Y1792307478.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#334155,#0f172a)",deco:"rgba(255,255,255,.10)"},
+    meta:["AI 활용","전자책"],
+    intro:[
+      "AI는 명령하면 실행합니다. 그래서 무엇을, 어떻게 시킬지 아는 사람이 AI를 잘 씁니다.",
+      "나를 먼저 알고, 원하는 것을 분명한 말로 바꾸어 AI에게 일을 맡기는 방법을 담았습니다."
+    ],
+    forWho:["AI를 써 보았지만 원하는 결과가 안 나오는 분","AI로 일과 공부를 돕고 싶은 분"],
+    toc:null, note:null,
+    links:{kmong:"https://kmong.com/gig/841399"}
+  },
+  {
+    id:"art", cat:"practice", tag:"노인 미술 강사 지도서", price:"18,000원",
+    title:"세계에서 온 노인 미술 수업 100",
+    subtitle:"미술관 감상부터 세계 공예까지 노인 미술 강사를 위한 하루 한 가지 새 수업",
+    hook:"요양원·복지관 미술 시간, 이 책 한 권이면 100번의 새 수업을 열 수 있습니다.",
+    img:"https://static.cdn.kmong.com/gigs/hfhje1795309519.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#d97b3a,#9b4b1c)",deco:"rgba(255,240,220,.16)"},
+    meta:["강사 지도서","수업 100가지","전자책"],
+    intro:[
+      "노인 미술 강사, 요양원·실버 복지관에서 미술을 가르치는 분들을 위한 수업 지도서입니다.",
+      "미술관 감상부터 세계 여러 나라의 공예까지, 세계의 특별한 노인 미술 수업 100가지를 하루 한 가지씩 바로 쓸 수 있게 정리했습니다."
+    ],
+    forWho:["노인 미술 강사, 실버 미술 강의를 준비하는 분","요양원·복지관 프로그램 담당자","매번 새로운 수업 아이디어가 필요한 분"],
+    toc:null, note:null,
+    links:{kyobo:"",yes24:"",aladin:"",ridi:"",kmong:""}
+  },
+  {
+    id:"table", cat:"health", tag:"건강 시리즈", price:"10,000원",
     title:"암 환자 식탁 시리즈",
     subtitle:"하루 한 가지, 몸을 돌보는 음식 이야기",
-    hook:"브로콜리 한 접시부터 단호박 한 그릇까지. 하루 한 가지 음식으로 차리는 회복의 식탁.",
+    hook:"하루 한 가지 음식으로 차리는 회복의 식탁. 지금은 03권 『두부와 콩 한 모』를 만날 수 있습니다.",
+    img:"https://static.cdn.kmong.com/gigs/DzXLi1794602184.jpg", imgFit:"contain",
     colors:{bg:"linear-gradient(165deg,#d96e3a,#9c3f1b)",deco:"rgba(255,235,200,.16)"},
-    meta:["전 10권","권당 A4 24쪽","크몽 판매"],
+    meta:["시리즈","권당 A4 24쪽","크몽 판매"],
     intro:[
       "암 치료 중이거나 회복기에 있는 분, 그리고 그 곁에서 식탁을 차리는 가족을 위한 시리즈입니다.",
-      "한 권에 한 가지 음식만 다루어, 왜 좋은지, 어떻게 고르고 어떻게 먹으면 좋은지를 쉽고 따뜻하게 정리했습니다. 필요한 권만 골라 보셔도 좋습니다."
+      "한 권에 한 가지 음식만 다루어, 왜 좋은지, 어떻게 고르고 어떻게 먹으면 좋은지를 쉽고 따뜻하게 정리했습니다."
     ],
-    series:["브로콜리 한 접시","토마토 한 그릇","두부와 콩 한 모","달걀 하나의 힘","등푸른 생선 한 토막","블루베리 한 줌","마늘과 양파의 식탁","귀리와 현미 통곡물 한 그릇","버섯 한 접시","단호박과 당근 주황빛 한 그릇"],
-    forWho:["치료 중이거나 회복기에 있는 분과 가족","매일의 식단을 어떻게 차려야 할지 막막한 분","건강한 식재료를 쉽게 알고 싶은 분"],
+    forWho:["치료 중이거나 회복기에 있는 분과 가족","매일의 식단을 어떻게 차려야 할지 막막한 분"],
     toc:null,
-    note:"이 시리즈는 일반적인 식생활 정보를 담은 책으로, 의학적 진료나 치료를 대신하지 않습니다. 식단 변경은 담당 의료진과 상의하세요.",
-    links:{kmong:""}
+    note:"일반적인 식생활 정보를 담은 책으로, 의학적 진료나 치료를 대신하지 않습니다. 식단 변경은 담당 의료진과 상의하세요.",
+    links:{kmong:"https://kmong.com/gig/864452"}
   },
   {
-    id:"next", cat:"soon", tag:"다음 책", soon:true,
-    title:"다음 책을 준비하고 있습니다",
-    subtitle:"새 책이 나오면 이곳에 가장 먼저 소개됩니다",
-    hook:"작가의 다음 이야기를 기다려 주세요.",
-    colors:{}, meta:[], intro:[], forWho:[], toc:null, note:null, links:{}
+    id:"breast", cat:"health", tag:"회복 식사 안내서", price:"15,000원",
+    title:"유방암 치료 후 무엇을 먹을까",
+    subtitle:"회복 식사 안내서",
+    hook:"치료를 마친 뒤 매일의 식탁, 무엇을 어떻게 차려야 할지 차근차근 안내합니다.",
+    img:"https://static.cdn.kmong.com/gigs/meqPP1792244071.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#e79aa8,#b45d70)",deco:"rgba(255,255,255,.16)"},
+    meta:["식단 안내서","전자책"],
+    intro:[
+      "유방암 치료를 마친 뒤 회복기에 있는 분과 가족을 위한 식사 안내서입니다.",
+      "회복기 식탁에서 챙기면 좋은 음식과 식사 습관을 알기 쉽게 정리했습니다."
+    ],
+    forWho:["유방암 치료 후 회복기에 있는 분","가족의 회복 식단을 준비하는 분"],
+    toc:null,
+    note:"일반적인 식생활 정보를 담은 책으로, 의학적 진료나 치료를 대신하지 않습니다. 식단 변경은 담당 의료진과 상의하세요.",
+    links:{kmong:"https://kmong.com/gig/841078"}
+  },
+  {
+    id:"sugar", cat:"health", tag:"내몸 건강서", price:"12,900원",
+    title:"설탕 줄이고 바꾸는 법",
+    subtitle:"내몸 건강서 — 암이 좋아하는 설탕",
+    hook:"하루 식탁에서 설탕을 줄이고 바꾸는, 쉽게 따라 하는 방법.",
+    img:"https://static.cdn.kmong.com/gigs/GHXXO1792306968.png", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#f2f2f2,#d6d6d6)",deco:"rgba(0,0,0,.06)",fg:"#1f1b16"},
+    meta:["식습관","전자책"],
+    intro:[
+      "우리가 모르는 사이 매일 먹고 있는 설탕. 이 책은 일상의 식탁에서 설탕을 줄이고 더 나은 재료로 바꾸는 방법을 알려 줍니다.",
+      "어렵지 않게, 오늘 저녁 식탁부터 바로 시작할 수 있는 실천법을 담았습니다."
+    ],
+    forWho:["단 음식을 줄이고 싶은 분","가족의 건강한 식습관을 만들고 싶은 분"],
+    toc:null,
+    note:"일반적인 식생활 정보를 담은 책으로, 의학적 진료나 치료를 대신하지 않습니다.",
+    links:{kmong:"https://kmong.com/gig/841394"}
+  },
+  {
+    id:"meditation", cat:"health", tag:"명상·건강 습관", price:"12,000원",
+    title:"하루 5분 명상",
+    subtitle:"세계의 명상법 15가지 건강 습관",
+    hook:"하루 5분이면 충분합니다. 세계의 명상법 15가지로 만드는 마음 건강 습관.",
+    img:"https://static.cdn.kmong.com/gigs/3uOYf1792312685.jpg", imgFit:"contain",
+    colors:{bg:"linear-gradient(165deg,#7aa6a1,#3f6b66)",deco:"rgba(255,255,255,.14)"},
+    meta:["명상 15가지","전자책"],
+    intro:[
+      "바쁜 하루 속에서도 5분이면 할 수 있는 명상법을 세계 여러 전통에서 15가지 골랐습니다.",
+      "앉아서, 걸으며, 숨 쉬며 따라 하다 보면 마음과 몸을 돌보는 작은 습관이 생깁니다."
+    ],
+    forWho:["명상을 처음 시작하는 분","마음이 자주 지치는 분","건강한 하루 습관을 만들고 싶은 분"],
+    toc:null, note:null,
+    links:{kmong:"https://kmong.com/gig/841446"}
   }
 ];
 
-const CATS = {all:"전체", growth:"삶과 성장", wisdom:"삶의 지혜", practice:"강사·돌봄", health:"건강", soon:"출간 예정"};
+const CATS = {all:"전체", growth:"삶과 성장", wisdom:"지혜·관계", practice:"강의·AI·교육", health:"건강"};
 
 /* ---------- 부품 ---------- */
 function cover(b){
   if(b.soon) return `<div class="cover soon"><div class="c-top">COMING SOON</div><div><div class="c-title" style="color:var(--ink2)">다음 책</div><div class="c-sub">준비 중입니다</div></div><div class="c-author">이선영 <span class="c-mark">印</span></div></div>`;
+  if(b.img) return `<div class="cover cover-img ${b.imgFit==='contain'?'fit-contain':''}" style="--c-bg:${b.colors.bg}"><img src="${b.img}" alt="${b.title} 표지" loading="lazy"></div>`;
   const c=b.colors;
   return `<div class="cover" style="--c-bg:${c.bg};--c-deco:${c.deco||''};${c.fg?'--c-fg:'+c.fg:''}">
     <span class="c-deco"></span>
@@ -425,7 +564,7 @@ function card(b){
     ${b.soon?'':'<span class="more">책 자세히 보기 →</span>'}</a>`;
 }
 function storeButtons(b){
-  return Object.keys(b.links).map(k=>{
+  return Object.keys(b.links).sort((x,y)=>(b.links[y]?1:0)-(b.links[x]?1:0)).map(k=>{
     const url=b.links[k];
     return url
       ? `<a class="store" href="${url}" target="_blank" rel="noopener">${STORES[k]}에서 보기 <span>→</span></a>`
@@ -530,7 +669,9 @@ function viewLecture(){
   const lec=[
     {i:"붓",t:"캘리그라피",d:"처음 붓을 잡는 분부터 작품을 만드는 분까지. 대학·도서관·평생교육 현장에서 30~70대와 함께해 온 수업입니다.",b:null},
     {i:"강",t:"예비 강사 교육",d:"인생 2막에 강단에 서려는 분들을 위한 마음가짐과 강의 예절.",b:"lectern"},
-    {i:"획",t:"장애인식개선",d:"요양병원·돌봄 기관 선생님 대상 30분 내외 교육. 현장의 장면으로 쉽게 풀어 갑니다.",b:"stroke"},
+    {i:"획",t:"장애인식개선",d:"요양병원·돌봄 기관 선생님 대상 30분 내외 교육. 현장의 장면으로 쉽게 풀어 갑니다.",b:null},
+    {i:"AI",t:"5060 AI 첫걸음",d:"노트북 첫걸음부터 AI에게 묻고 시키기까지, 10번의 수업이면 혼자 할 수 있습니다.",b:"ai"},
+    {i:"美",t:"노인 미술 강사 과정",d:"요양원·복지관에서 바로 쓰는 세계의 노인 미술 수업 아이디어.",b:"art"},
     {i:"걷",t:"자기 성장·인생 2막",d:"26년 미용 인생에서 강단까지. 다시 시작하는 용기와 꾸준함에 관한 이야기.",b:"barefoot"},
     {i:"명",t:"명리로 보는 나와 관계",d:"점이 아닌 지혜로. 타고난 성향을 이해하고 관계를 돌아보는 시간.",b:"code"}
   ];
@@ -562,7 +703,7 @@ function viewDetail(id){
         <div class="eyebrow">${CATS[b.cat]} · ${b.tag}</div>
         <h1>${b.title}</h1>
         <p class="subtitle">${b.subtitle}</p>
-        <div class="meta">${b.meta.map(m=>`<span>${m}</span>`).join("")}<span>이선영 지음</span></div>
+        <div class="meta">${b.meta.map(m=>`<span>${m}</span>`).join("")}${b.price?`<span>${b.price}</span>`:''}<span>이선영 지음</span></div>
         ${b.note && b.id==='code'?`<div class="callout">${b.note}</div>`:''}
         <p class="lead">${b.hook}</p>
 
